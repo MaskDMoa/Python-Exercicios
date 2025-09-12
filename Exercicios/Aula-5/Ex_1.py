@@ -12,5 +12,5 @@ print(log)
 
 #Letra B
 
-print("A quantidade de Paises na Oceanis é de {}".format((dfPaises['Region'] == 'OCEANIA').sum()))
+print("A quantidade de Paises na Oceania é de {}".format((dfPaises['Region'] == 'OCEANIA').sum()))
 
