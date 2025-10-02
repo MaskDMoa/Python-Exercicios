@@ -4,13 +4,17 @@ import matplotlib.pyplot as plt
 
 
 dfPaises = pd.read_csv('paises.csv', delimiter=';')
+dfPaises['Region'] = dfPaises['Region'].str.strip()
 
-deathrate = dfPaises['Deathrate']
-birthrate = dfPaises['Deathrate']
+df_norte = dfPaises[dfPaises['Region'] == 'NORTHERN AMERICA']
 
-plt.xlabel('')
-plt.ylabel('')
+deathrate = df_norte['Deathrate']
+birthrate = df_norte['Birthrate']
+countries = df_norte['Country']
 
-plt.plot(deathrate)
+plt.xlabel('Países')
+plt.ylabel('Taxas')
+
+plt.plot(countries, deathrate, 'r-', countries, birthrate, 'b--')
 
 plt.show()
